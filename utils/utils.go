@@ -9,10 +9,10 @@ import (
 func IsPortTaken(port string) bool {
 	addr, err := net.Listen(config.DefaultServerProtocol, ":"+port)
 	if err != nil {
-		return true // Port is taken
+		return true
 	}
-	defer addr.Close() // Now it's safe, because Listen() succeeded
-	return false       // Port is free
+	defer addr.Close()
+	return false
 }
 
 func IsInteger(s string) bool {
